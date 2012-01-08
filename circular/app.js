@@ -22,11 +22,7 @@ var Scene = function() {
   this.canvas.height = document.height;
   document.body.appendChild(this.canvas);
 
-  this.hDensity = 20.0;
-  this.vDensity = 5.0;
-  this.vStep = this.canvas.width / this.hDensity;
-  this.hStep = this.canvas.height / this.vDensity;
-  this.layers = 5;
+  this.dotsCount = 300;
   this.dots = [];
   
   this.ctx = this.canvas.getContext('2d');
@@ -42,13 +38,16 @@ Scene.prototype.paintBg = function() {
 };
 
 Scene.prototype.initiateDots = function() {
-  for (var l=0; l < this.layers; l++) {
-    for (var j=0; j < this.vDensity; j++) {
-      for (var k=0; k < this.hDensity; k++) {
-        this.dots.push(new Dot(this.ctx, l, j, k, this.vStep, this.hStep));
-      };
-    };
-  };
+  var center = {x : this.canvas.width * 0.5, y : this.canvas.height * 0.5};
+  var radius = Math.min(center.x, center.y);
+  var step = radius * 2.0 / (this.dotsCount - 1);
+  for (var i=0; i < this.dotsCount; i++) {
+    var dot = new Dot(this.ctx,
+                      center.x - radius + step * i, // dot x
+                      center.y,                     // dot y
+                      center)
+    this.dots.push( dot );
+  }
 };
 
 Scene.prototype.drawDots = function(applyVelocity){

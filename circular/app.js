@@ -22,12 +22,12 @@ var Scene = function() {
   this.canvas.height = document.height;
   document.body.appendChild(this.canvas);
 
-  this.dotsCount = 300;
+  this.dotsCount = 100;
   this.dots = [];
   
   this.ctx = this.canvas.getContext('2d');
   this.paintBg();
-  this.initiateDots();
+  // this.initiateDots();
 };
 
 Scene.prototype.constructor = Scene;
@@ -67,4 +67,8 @@ Scene.prototype.draw = function(){
 window.onload = function() {
   scene = new Scene();
   animate();
+};
+
+window.onclick = function() {
+  scene.initiateDots();
 };

@@ -20,8 +20,8 @@ Dot.prototype.calculateAngle = function(){
 }
 
 Dot.prototype.draw = function() {
-  this.ctx.shadowBlur    = 2;
-  this.ctx.shadowColor   = 'rgba(255, 255, 255, 0.7)';
+  // this.ctx.shadowBlur    = 2;
+  // this.ctx.shadowColor   = 'rgba(255, 255, 255, 0.7)';
   this.ctx.fillStyle = 'rgba(226,219,226,0.7)';
 
   // Draw circle

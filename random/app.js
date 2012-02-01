@@ -1,11 +1,11 @@
 // shim layer with setTimeout fallback
 // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 window.requestAnimFrame = (function(){
-  return  window.requestAnimationFrame       || 
-          window.webkitRequestAnimationFrame || 
-          window.mozRequestAnimationFrame    || 
-          window.oRequestAnimationFrame      || 
-          window.msRequestAnimationFrame     || 
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          window.oRequestAnimationFrame      ||
+          window.msRequestAnimationFrame     ||
           function(/* function */ callback, /* DOMElement */ element){
             window.setTimeout(callback, 1000 / 60);
           };
@@ -18,8 +18,8 @@ function animate(time) {
 
 var Scene = function() {
   this.canvas = document.createElement('canvas');
-  this.canvas.width = document.width;
-  this.canvas.height = document.height;
+  this.canvas.width = window.innerWidth;
+  this.canvas.height = window.innerHeight;
   document.body.appendChild(this.canvas);
 
   this.hDensity = 25.0;
@@ -28,7 +28,7 @@ var Scene = function() {
   this.hStep = this.canvas.height / this.vDensity;
   this.layers = 7;
   this.dots = [];
-  
+
   this.ctx = this.canvas.getContext('2d');
   this.paintBg();
   this.initiateDots();
@@ -37,7 +37,7 @@ var Scene = function() {
 Scene.prototype.constructor = Scene;
 
 Scene.prototype.paintBg = function() {
-  this.ctx.fillStyle = '#070712';  
+  this.ctx.fillStyle = '#070712';
   this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 };
 

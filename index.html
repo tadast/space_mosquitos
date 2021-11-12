@@ -3,8 +3,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=no">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   </head>
-  <body class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
-    <div class="max-w-screen-sm mx-auto text-white px-6">
+  <body class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 flex flex-col min-h-screen">
+    <div class="flex-grow max-w-screen-sm mx-auto text-white px-6">
       <h1 class="my-10 text-4xl text-center font-bold">List of experiments</h1>
       <ul class="mt-20 flex flex-col space-y-5 text-3xl font-light">
        <li class="w-full text-center">
@@ -18,5 +18,9 @@
        </li>
       </ul>
     </div>
+    <footer class="p-3 text-center text-white flex items-center justify-around">
+      <a href="https://github.com/tadast/space_mosquitos">Source</a>
+      <a href="http://codeme.lt">About the author</a>
+    </footer>
   </body>
 </html>

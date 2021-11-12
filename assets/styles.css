@@ -17,10 +17,7 @@
 }
 
 .pulse {
-  -moz-animation: pulse 3s infinite linear;
-  -ms-animation: pulse 3s infinite linear;
-  -o-animation: pulse 3s infinite linear;
-  -webkit-animation: pulse 3s infinite linear;
+  animation: pulse 3s infinite linear;
 }
 
 @keyframes pulse {

@@ -1,15 +1,15 @@
 <html>
  <head>
-   <style>
-    *{margin: 0; padding: 0;}
-   </style>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
  </head>
  <body>
-   <h1>List of experiments</h1>
-   <ul>
-     <li><a href='galaxy/index.html'>Galaxy</a></li>
-     <li><a href='random/index.html'>Random</a></li>
-     <li><a href='warp/index.html'>Warp speed</a></li>
-   </ul>
+   <div class="max-w-screen-sm mx-auto text-gray-800">
+     <h1 class="my-10 text-4xl text-center">List of experiments</h1>
+     <ul class="flex flex-col space-y-5 text-2xl">
+       <li class="w-full text-center"><a class="underline text-blue-600" href='galaxy/index.html'>Galaxy</a></li>
+       <li class="w-full text-center"><a class="underline text-blue-600" href='random/index.html'>Random</a></li>
+       <li class="w-full text-center"><a class="underline text-blue-600" href='warp/index.html'>Warp speed</a></li>
+     </ul>
+   </div>
  </body>
 </html>

@@ -19,12 +19,20 @@ function animate(time) {
 window.onload = function() {
   scene = new Scene();
   animate();
-};
 
-window.onclick = function() {
-  scene.initiateDots();
-  clickElm = document.getElementById('click')
-  if (clickElm) {
-    clickElm.parentNode.removeChild(clickElm);
-  };
+  function init(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    scene.initiateDots();
+    clickElm = document.getElementById('click');
+    if (clickElm) {
+      clickElm.parentNode.removeChild(clickElm);
+    };
+
+    return false;
+  }
+
+  document.getElementsByTagName('canvas')[0].addEventListener('touchend', init, { passive: false })
+  document.addEventListener('click', init, { passive: false })
 };

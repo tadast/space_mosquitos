@@ -17,6 +17,7 @@
 }
 
 .pulse {
+  -webkit-animation: pulse 3s infinite linear;
   animation: pulse 3s infinite linear;
 }
 

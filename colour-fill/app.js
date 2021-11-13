@@ -4,11 +4,11 @@ var Scene = function() {
   this.canvas.height = window.innerHeight;
   document.body.appendChild(this.canvas);
 
-  this.hDensity = 4.0;
-  this.vDensity = 4.0;
+  this.hDensity = 3.0;
+  this.vDensity = 3.0;
   this.vStep = this.canvas.width / this.hDensity;
   this.hStep = this.canvas.height / this.vDensity;
-  this.layers = 7;
+  this.layers = 5;
   this.dots = [];
 
   this.ctx = this.canvas.getContext('2d');
@@ -42,6 +42,5 @@ Scene.prototype.drawDots = function(applyVelocity){
 };
 
 Scene.prototype.draw = function(){
-  this.paintBg();
   this.drawDots(true);
 };

@@ -3,8 +3,10 @@ var Dot = function(context, x, y, universeCenter) {
   this.y = y;
   this.ctx = context;
   this.universeCenter = universeCenter;
-  this.distance = Math.abs(x - universeCenter.x); // assumes y is 0!
   this.step = 3; // distance to move per animation frame
+  this.distance = Math.abs(x - universeCenter.x); // assumes y is 0!
+  this.distance += (-1 * this.step + - (this.step * 2 * Math.random()));
+  console.log(this.distance)
   this.angle = x > universeCenter.x ? 0 : Math.PI
   this.calculateAngle();
 };
@@ -26,7 +28,7 @@ Dot.prototype.draw = function() {
 
   // Draw circle
   this.ctx.beginPath();
-  this.ctx.arc(this.x, this.y, 1.0, 0.0 + Math.PI * 2.0, 0.0 + Math.PI * 0.0, true); 
+  this.ctx.arc(this.x, this.y, 1.0, 0.0 + Math.PI * 2.0, 0.0 + Math.PI * 0.0, true);
 
   this.ctx.closePath();
   this.ctx.fill();
